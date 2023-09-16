@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+:root {
+  --nav-color: #1010101c;
+  --background-color: #101010;
+  --background-trans-color: #EBF1FF;
+  --text-color: #fff;
+  --link-color: #3B72E5;
+  --border-dark-color: #4D4D4D;
+  --sp-text: linear-gradient(90deg, #FFF -2.98%, #4F82EE 104.1%);
+  --font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+  top: 0;
+  position: sticky;
+  height: 80px;
+  background: var(--nav-color);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-dark-color);
+  z-index: 10;
+}
+nav .nav-container {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+#hamburger {
+  position: relative;
+  width: 80px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.line1:not(:hover) {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  width: 50px;
+  height: 1px;
+  background: var(--link-color);
+  transition: 0.5s ease;
+}
+
+.line2:not(:hover) {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 35px;
+  height: 1px;
+  background: var(--background-trans-color);
+  transition: transform 0.5s ease, top 0.5s ease 0.5s;
+}
+
+.line3:not(:hover) {
+  top: 65%;
+  right: 0;
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: var(--background-trans-color);
+  transition: transform 0.5s ease, top 0.5s ease;
+}
+
+#hamburger:hover .line1,
+#hamburger:hover .line2,
+#hamburger:hover .line3 {
+  top: 50%;
+  transform: rotate(90deg) translate(0, -50%);
+  transition: transform 0.3s ease, top 0.5s ease 0.2s;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+}
+
+#hero {
+  max-width: 2600px;
+  max-height: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: calc(100vh - 80px);
+  width: 100%;
+}
+
+#title {
+  position: relative;
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-right: 1px solid var(--border-dark-color);
+}
+
+.side-text {
+  display: flex;
+  writing-mode: vertical-rl;
+  color: var(--link-color);
+}
+
+#title h1 {
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: 500;
+  margin: 0 auto;
+}
+
+.sp-text {
+  background: var(--sp-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#hero-buttons {
+  grid-column: span 2;
+  display: grid;
+  height: 100%;
+  width: 100%;
+}
+
+.button {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  padding: 2rem 2rem;
+  background: var(--background-color);
+  border: none;
+  border-bottom: 1px solid var(--border-dark-color);
+  border-right: 1px solid var(--border-dark-color);
+  color: var(--text-color);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.button span {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  transition: all 0.5s ease;
+}
+
+.button:hover span {
+  top: 2%;
+  right: 2%;
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  background: var(--background-trans-color);
+  color: var(--link-color);
+  padding: 2rem 2.5rem;
+  letter-spacing: 2px;
+  transition: all 0.3s ease, padding 0.3s ease 0.2s;
+}
+
+.button:not(:hover) {
+  transition: all 0.5s ease;
+}/*# sourceMappingURL=main.css.map */
