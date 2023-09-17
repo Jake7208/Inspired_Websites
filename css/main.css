@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 :root {
-  --nav-color: #1010101c;
+  --nav-color: #10101022;
   --background-color: #101010;
-  --background-trans-color: #EBF1FF;
+  --background-trans-color: #e7e7e7;
   --text-color: #fff;
-  --link-color: #3B72E5;
-  --border-dark-color: #4D4D4D;
-  --sp-text: linear-gradient(90deg, #FFF -2.98%, #4F82EE 104.1%);
+  --link-color: #3b72e5;
+  --border-dark-color: #4d4d4d;
+  --sp-text: linear-gradient(90deg, #fff -2.98%, #4f82ee 104.1%);
   --font-family: "Poppins", sans-serif;
 }
 
@@ -53,6 +53,11 @@ nav .nav-container {
   cursor: pointer;
 }
 
+.mask {
+  z-index: 5;
+  overflow: hidden;
+}
+
 .nav-menu {
   position: fixed;
   display: grid;
@@ -72,12 +77,31 @@ nav .nav-container {
   list-style-type: none;
   padding: 0;
 }
-.nav-menu li a {
+.nav-menu .nav-button {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  text-decoration: none;
+}
+.nav-menu .social {
   list-style: none;
   text-decoration: none;
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(1.2rem, 3vw, 1.3rem);
+  font-weight: 400;
   color: var(--text-color);
-  font-weight: 500;
+  position: relative;
+}
+.nav-menu .social::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--link-color);
+  transition: width 0.3s ease;
+}
+.nav-menu .social:hover::after {
+  width: 110%;
+  transition: width 0.3s ease;
 }
 
 .nav-buttons {
@@ -103,51 +127,30 @@ nav .nav-container {
 .socials {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100%;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .close-menu {
   width: 80px;
   height: 80px;
-  position: relative;
-  display: flex;
-  align-items: end;
-  border: none;
-  background: none;
+  margin: 0 0 0 auto;
   cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease;
 }
 
-.close-menu span {
-  position: absolute;
-  top: 50%;
-  right: -50%;
-  transform: translate(50%, -50%) rotate(45deg);
-  width: 50px;
-  height: 2px;
-  background: var(--link-color);
-}
-
-.close-menu span::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
-  width: 50px;
-  height: 2px;
-  background: var(--link-color);
+.close-menu:hover {
+  transform: translateX(10px);
+  transition: transform 0.3s ease;
 }
 
 .socials li {
+  position: relative;
   list-style: none;
   margin: 1rem 0;
-}
-
-.social {
-  font-size: clamp(1.2rem, 3vw, 1.3rem) !important;
-  font-weight: 400 !important;
 }
 
 .line1:not(:hover) {
@@ -155,7 +158,8 @@ nav .nav-container {
   top: 35%;
   right: 0;
   width: 50px;
-  height: 1px;
+  height: 2px;
+  border-radius: 2px;
   background: var(--link-color);
   transition: 0.5s ease;
 }
@@ -165,8 +169,9 @@ nav .nav-container {
   top: 50%;
   right: 0;
   width: 35px;
-  height: 1px;
-  background: var(--background-trans-color);
+  height: 2px;
+  border-radius: 2px;
+  background: var(--link-color);
   transition: transform 0.5s ease;
 }
 
@@ -207,6 +212,9 @@ section {
   background-image: url("../waterMark.svg");
   background-repeat: no-repeat;
   background-size: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .side-text {
@@ -281,4 +289,29 @@ section {
 
 .button:not(:hover) {
   transition: all 0.5s ease;
+}
+
+#expertise {
+  margin: 0 auto;
+  border: 1px solid var(--border-dark-color);
+  border-bottom: 1px solid var(--border-dark-color);
+  max-width: 2600px;
+}
+
+.expertise-container {
+  height: calc(30vh + 80px);
+  display: flex;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border-dark-color);
+}
+
+.expertise-title {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: clamp(4rem, 10vw, 9rem);
+  color: var(--background-color);
+  font-weight: 500;
 }/*# sourceMappingURL=main.css.map */
