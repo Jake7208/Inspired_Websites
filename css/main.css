@@ -45,10 +45,109 @@ nav .nav-container {
 }
 
 #hamburger {
+  border: none;
+  background: none;
   position: relative;
   width: 80px;
   height: 100%;
   cursor: pointer;
+}
+
+.nav-menu {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100vh;
+  width: 50%;
+  z-index: 20;
+  right: 0;
+  background: var(--background-color);
+  -webkit-clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
+          clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
+  transition: -webkit-clip-path 0.6s ease;
+  transition: clip-path 0.6s ease;
+  transition: clip-path 0.6s ease, -webkit-clip-path 0.6s ease;
+}
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+.nav-menu li a {
+  list-style: none;
+  text-decoration: none;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.nav-buttons {
+  position: relative;
+  grid-column: span 3;
+  display: grid;
+  height: 100vh;
+}
+
+.nav-button {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  padding: 2rem 2rem;
+  background: var(--background-color);
+  border: 1px solid var(--border-dark-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.close-menu {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  display: flex;
+  align-items: end;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.close-menu span {
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  transform: translate(50%, -50%) rotate(45deg);
+  width: 50px;
+  height: 2px;
+  background: var(--link-color);
+}
+
+.close-menu span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width: 50px;
+  height: 2px;
+  background: var(--link-color);
+}
+
+.socials li {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.social {
+  font-size: clamp(1.2rem, 3vw, 1.3rem) !important;
+  font-weight: 400 !important;
 }
 
 .line1:not(:hover) {
@@ -68,25 +167,14 @@ nav .nav-container {
   width: 35px;
   height: 1px;
   background: var(--background-trans-color);
-  transition: transform 0.5s ease, top 0.5s ease 0.5s;
-}
-
-.line3:not(:hover) {
-  top: 65%;
-  right: 0;
-  position: absolute;
-  width: 60px;
-  height: 1px;
-  background: var(--background-trans-color);
-  transition: transform 0.5s ease, top 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 #hamburger:hover .line1,
-#hamburger:hover .line2,
-#hamburger:hover .line3 {
+#hamburger:hover .line2 {
   top: 50%;
   transform: rotate(90deg) translate(0, -50%);
-  transition: transform 0.3s ease, top 0.5s ease 0.2s;
+  transition: transform 0.3s ease;
 }
 
 section {
@@ -100,6 +188,10 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   height: calc(100vh - 80px);
+  margin: 0 auto;
+  border: 1px solid var(--border-dark-color);
+  border-top: none;
+  border-radius: 15px 15px 0 0;
   width: 100%;
 }
 
@@ -110,8 +202,11 @@ section {
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  width: 100%;
+  width: 100;
   border-right: 1px solid var(--border-dark-color);
+  background-image: url("../waterMark.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .side-text {
@@ -131,6 +226,7 @@ section {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-decoration: underline;
 }
 
 #hero-buttons {
@@ -148,31 +244,36 @@ section {
   align-items: end;
   padding: 2rem 2rem;
   background: var(--background-color);
+  border-radius: 0 15px 0 15px;
   border: none;
-  border-bottom: 1px solid var(--border-dark-color);
-  border-right: 1px solid var(--border-dark-color);
   color: var(--text-color);
   font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 400;
   cursor: pointer;
 }
 
-.button span {
+.button:nth-child(1),
+.button:nth-child(2) {
+  border-bottom: 1px solid var(--border-dark-color);
+}
+
+.button span,
+.nav-button svg {
   position: absolute;
   top: 5%;
   right: 5%;
   transition: all 0.5s ease;
 }
 
-.button:hover span {
+.button:hover span,
+.nav-button:hover svg {
   top: 2%;
   right: 2%;
   transition: all 0.5s ease;
 }
 
-.button:hover {
-  background: var(--background-trans-color);
-  color: var(--link-color);
+.button:hover,
+.nav-button:hover {
   padding: 2rem 2.5rem;
   letter-spacing: 2px;
   transition: all 0.3s ease, padding 0.3s ease 0.2s;

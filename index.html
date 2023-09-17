@@ -7,6 +7,33 @@
     <title>Inspired Websites</title>
 </head>
 <body>
+    <div class="nav-menu">
+        <div class="nav-buttons">
+            <li><a href="index.html" class="nav-button">Home 
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path d="M1.36396 23.2844C9.92437 14.724 14.7239 9.92448 23.2843 1.36406M23.2843 1.36406L9.99811 1.9223M23.2843 1.36406L22.726 14.6502" stroke="#3B72E6" stroke-width="2"/>
+            </svg></a></li>
+            <li><a href="about.html" class="nav-button">About <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path d="M1.36396 23.2844C9.92437 14.724 14.7239 9.92448 23.2843 1.36406M23.2843 1.36406L9.99811 1.9223M23.2843 1.36406L22.726 14.6502" stroke="#3B72E6" stroke-width="2"/>
+            </svg></a></li>
+            <li><a href="services.html" class="nav-button">Services <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path d="M1.36396 23.2844C9.92437 14.724 14.7239 9.92448 23.2843 1.36406M23.2843 1.36406L9.99811 1.9223M23.2843 1.36406L22.726 14.6502" stroke="#3B72E6" stroke-width="2"/>
+            </svg></a></li>
+            <li><a href="contact.html" class="nav-button">Contact <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path d="M1.36396 23.2844C9.92437 14.724 14.7239 9.92448 23.2843 1.36406M23.2843 1.36406L9.99811 1.9223M23.2843 1.36406L22.726 14.6502" stroke="#3B72E6" stroke-width="2"/>
+            </svg></a></li>
+        </div>
+        <div class="socials">
+            <button class="close-menu">
+                <span class="line3"></span>
+            </button>
+            <div>
+                <li><a href="#" class="social">LinkedIn</a></li>
+                <li><a href="#" class="social">Facebook</a></li>
+                <li><a href="#" class="social">Instagram</a></li>
+            </div>
+        </div>
+    </div>
     <nav>
         <div class="nav-container">
             <div id="logo">
@@ -16,13 +43,14 @@
                     </svg>
                 </a>
             </div> 
-            <div id="hamburger" onclick="toggleMenu()">
+            <button id="hamburger">
                 <div class="line1"></div>
                 <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
+            </button>
+
         </div>
     </nav>
+    
     <section id="hero" >
             <div id="title" class="title">
                 <h1>Transform Your <br> <span class="sp-text">Inspiration</span> Into <br> a Breathtaking <br> Website.</h1>
@@ -31,7 +59,7 @@
                 </span>
             </div>
             <div id="hero-buttons">
-                <button class="button">Website <span class="arrow">
+                <button class="button">Get Your Website <span class="arrow">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                     <path d="M1.36396 23.2844C9.92437 14.724 14.7239 9.92448 23.2843 1.36406M23.2843 1.36406L9.99811 1.9223M23.2843 1.36406L22.726 14.6502" stroke="#3B72E6" stroke-width="2"/>
                     </svg></span></button>
@@ -51,4 +79,7 @@
 
     </section>
 </body>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="js/script.js"></script>
 </html>
