@@ -1,9 +1,5 @@
 const lenis = new Lenis();
 
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
-
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
@@ -14,7 +10,7 @@ requestAnimationFrame(raf);
 gsap.registerPlugin(ScrollTrigger);
 const mask = document.querySelectorAll(".mask p");
 const expertise = document.querySelector("#expertise");
-const scrollMask = document.querySelector(".mask h1");
+const scrollMask = document.querySelector(".expertise-title");
 const title = document.querySelector("#title h1");
 const nav = document.querySelector("nav");
 
@@ -62,32 +58,9 @@ closeMenu.addEventListener("click", () => {
 const tl2 = gsap.timeline();
 
 tl2.fromTo(
-  nav,
-  {
-    background: "var(--nav-color)",
-    transition: "background 0.5s ease",
-  },
-  {
-    background: "var(--background-trans-color)",
-  }
-),
-  ">";
-
-tl2.fromTo(
-  expertise,
-  {
-    background: "var(--background-color)",
-    transition: "background 0.5s ease",
-  },
-  {
-    background: "var(--background-trans-color)",
-  }
-);
-
-tl2.fromTo(
   scrollMask,
   {
-    y: "100%",
+    y: "-100%",
   },
   {
     y: "0%",
@@ -97,8 +70,54 @@ tl2.fromTo(
 ScrollTrigger.create({
   animation: tl2,
   trigger: expertise,
-  start: "top-=300 top",
+  start: "top-=100% top",
   end: "bottom bottom",
-  markers: true,
-  scrub: true,
+  // markers: true,
+  scrub: 1,
+});
+
+const tl3 = gsap.timeline({ paused: true });
+
+tl3.fromTo(
+  scrollMask,
+  {},
+  {
+    y: "100%",
+  }
+);
+
+ScrollTrigger.create({
+  animation: tl3,
+  trigger: expertise,
+  start: "top top",
+  end: "bottom bottom",
+  // markers: true,
+  scrub: 1,
+});
+
+const video = document.querySelector(".video");
+const cont = document.querySelector(".content-wrapper");
+// const stats = document.querySelector("#stats");
+
+gsap.to(video, {
+  scrollTrigger: {
+    trigger: video,
+    start: "top-=80",
+    end: "bottom center+=150",
+    pin: true,
+    pinSpacing: false,
+    scrub: 1,
+  },
+});
+
+const stackItems = document.querySelectorAll(".stack-item");
+
+stacktl = gsap.timeline({
+  scrollTrigger: {
+    trigger: cont,
+    start: "top-=200 top",
+    end: "bottom bottom",
+    // markers: true,
+    scrub: true,
+  },
 });
