@@ -75,6 +75,7 @@ ScrollTrigger.create({
   // markers: true,
   scrub: 1,
 });
+const body = document.querySelector("body");
 
 const tl3 = gsap.timeline({ paused: true });
 
@@ -95,29 +96,42 @@ ScrollTrigger.create({
   scrub: 1,
 });
 
-const video = document.querySelector(".video");
 const cont = document.querySelector(".content-wrapper");
 // const stats = document.querySelector("#stats");
+const video = document.querySelector(".video");
+const videoCont = document.querySelector(".video-container");
 
 gsap.to(video, {
   scrollTrigger: {
-    trigger: video,
-    start: "top-=80",
-    end: "bottom center+=150",
+    trigger: videoCont, // Use the video-container as the trigger
+    start: "top-=80px top", // Pin the video when the top of the video-container reaches the top of the viewport
+    end: "bottom center+=80px",
     pin: true,
     pinSpacing: false,
     scrub: 1,
   },
 });
 
-const stackItems = document.querySelectorAll(".stack-item");
+const stackItems = document.querySelectorAll(".stack-item p");
 
 stacktl = gsap.timeline({
   scrollTrigger: {
     trigger: cont,
-    start: "top-=200 top",
-    end: "bottom bottom",
-    // markers: true,
+    start: "top-=30% top+=15%",
+    end: "bottom+=15% bottom",
     scrub: true,
   },
 });
+
+stacktl.fromTo(
+  stackItems,
+  {
+    y: "10%",
+    opacity: 0,
+  },
+  {
+    opacity: 1,
+    y: "0%",
+    stagger: 0.2,
+  }
+);
