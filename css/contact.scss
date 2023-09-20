@@ -1,0 +1,42 @@
+.marquee {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  position: relative;
+  bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-dark-color);
+}
+
+strong {
+  font-weight: 400;
+  font-size: clamp(5rem, 10vw, 8rem);
+}
+
+.marquee div {
+  font-style: bold;
+  display: flex;
+  position: relative;
+  font-size: clamp(5rem, 10vw, 8rem);
+  line-height: 200%;
+  color: var(--btn-border);
+  animation: marquee 30000ms linear infinite; /* Adjust the animation duration */
+  color: var(--color-text);
+}
+#contact {
+  margin: 0 auto;
+  max-width: 2600px;
+}
+.contact-container {
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100%));
+  }
+}
