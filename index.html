@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/contact.css" />
     <title>Inspired Websites</title>
   </head>
   <body>
@@ -46,7 +46,7 @@
         </li>
         <li>
           <a href="services.html" class="nav-button"
-            >Services
+            >Plans & Services
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -162,7 +162,7 @@
         </button>
         <button class="button">
           <div class="mask">
-            <p>Services</p>
+            <p>Plans & Services</p>
           </div>
           <span class="arrow">
             <svg
@@ -210,13 +210,13 @@
       </div>
     </section>
     <section class="content-wrapper">
-      <div class="video-container">
+      <!-- <div class="video-container">
         <video autoplay loop muted>
           <source src="filler.mp4" type="video/mp4" />
           <source src="filler.mkv" type="video/webm" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> -->
       <div class="stack">
         <li class="stack-item"><p>Branding</p></li>
         <li class="stack-item"><p>Ecommerce</p></li>
@@ -263,8 +263,8 @@
       </div>
     </article>
     <section id="testimonials">
-      <h1 class="testimonial-title sp-text">
-        Don't Just Take Our Word for It Hear From Our Satisfied Customers!
+      <h1 class="testimonial-title">
+        <span class="sp-text">Don't Just Take Our Word for It Hear From Our Satisfied Customers!</span>
       </h1>
       <div class="testimonial-container">
         <div class="testimonial-card">
@@ -397,31 +397,100 @@
           <strong>&nbsp; Contact Us &nbsp; ♦ &nbsp;</strong>
         </div>
       </div>
-      <div class="contact-container">
-        <div class="contact-buttons">
-          <button>
-            Book a Consultation
-          </button>
-          <button>
-            Email Support
-          </button>
+
+      <aside class="contact-buttons">
+        <a
+          href="https://calendly.com/inspired-websites"
+          target="_blank"
+          class="contact-button"
+        >
+          <p>Book a Consultation</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="24"
+            viewBox="0 0 25 24"
+            fill="none"
+          >
+            <path
+              d="M1.36396 23.2844C9.92437 14.724 14.7239 9.92448 23.2843 1.36406M23.2843 1.36406L9.99811 1.9223M23.2843 1.36406L22.726 14.6502"
+              stroke="#3B72E6"
+              stroke-width="2"
+            />
+          </svg>
+        </a>
+        <a
+          href="mailto:contact@inspiredwebsites.com"
+          target="_blank"
+          class="contact-button"
+        >
+          Email Support
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="24"
+            viewBox="0 0 25 24"
+            fill="none"
+          >
+            <path
+              d="M1.36396 23.2844C9.92437 14.724 14.7239 9.92448 23.2843 1.36406M23.2843 1.36406L9.99811 1.9223M23.2843 1.36406L22.726 14.6502"
+              stroke="#3B72E6"
+              stroke-width="2"
+            />
+          </svg>
+        </a>
+      </aside>
+      <form class="contact-form">
+        <h1>Get in Touch</h1>
+        <div class="entry-area">
+          <input type="text" required />
+          <label class="label-line">Name</label>
         </div>
-        <div class="contact-form">
-          <form>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="text" placeholder="Company" />
-            <select name="budget" id="budget">
-              <option value="budget">500$ - 2000$</option>
-              <option value="budget">2000$ - 3000$</option>
-              <option value="budget">5000$+</option>
-            </select>
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-            <button type="submit">Send Message <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M11.3137 19.7483L0 8.43457L19.0919 0.656396L11.3137 19.7483ZM10.6066 16.2127L15.4503 4.298L3.53553 9.14168L6.01041 11.6166L11.3137 8.43457L8.13173 13.7379L10.6066 16.2127Z" fill="white"/>
-              </svg></button>
-      </div>
+        <div class="entry-area">
+          <input class="email" type="email" required />
+          <label class="label-line">Email</label>
+        </div>
+        <div class="entry-area">
+          <input type="text" />
+          <label class="label-line">Company</label>
+        </div>
+        <div class="entry-area">
+          <select name="budget" id="budget">
+            <option value="budget" selected>Budget</option>
+            <option value="budget">500$ - 2000$</option>
+            <option value="budget">2000$ - 3000$</option>
+            <option value="budget">5000$+</option>
+          </select>
+        </div>
+
+        <div class="entry-area2">
+          <textarea type="text" required></textarea>
+          <div class="label-line2">Have a Message. . .</div>
+        </div>
+        <button type="submit" class="send-btn">
+          Send Message
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <path
+              d="M11.3137 19.7483L0 8.43457L19.0919 0.656396L11.3137 19.7483ZM10.6066 16.2127L15.4503 4.298L3.53553 9.14168L6.01041 11.6166L11.3137 8.43457L8.13173 13.7379L10.6066 16.2127Z"
+              fill=""
+            />
+          </svg>
+        </button>
+      </form>
     </section>
+    <footer>
+      <div class="owner">
+        <p >All Rights Reserved - <span class="link-text">Inspired Websites LLC</span> © 2023</p>
+      </div>
+      <div class="social">
+        <p>Designed & Developed By - <a href="https://www.jacobprice.dad" class="link-text" target="_blank">Jacob Price</a></p>
+    </footer>
   </body>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

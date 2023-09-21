@@ -1,11 +1,29 @@
+#contact {
+  max-width: 2600px;
+  max-height: 1200px;
+  height: calc(200vh - 80px);
+  margin: 0 auto;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-dark-color);
+  border-top: none;
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-content: start;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
 .marquee {
+  grid-column: span 5;
+  grid-row: span 2;
   display: flex;
   overflow-x: hidden;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   margin: 0 auto;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  bottom: 1rem;
   white-space: nowrap;
   overflow: hidden;
   border-bottom: 1px solid var(--border-dark-color);
@@ -23,15 +41,281 @@ strong {
   font-size: clamp(5rem, 10vw, 8rem);
   line-height: 200%;
   color: var(--btn-border);
-  animation: marquee 30000ms linear infinite; /* Adjust the animation duration */
-  color: var(--color-text);
+  animation: marquee 25000ms linear infinite; /* Adjust the animation duration */
+  color: var(--text-color);
 }
-#contact {
+
+.contact-buttons {
+  grid-row: span 4;
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: space-between; /* Distribute remaining space evenly */
+}
+a {
+  text-decoration: none;
+}
+
+.contact-form {
+  grid-row: span 4;
+  grid-column: span 3;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.contact-form h1 {
+  font-size: clamp(2rem, 6vw, 2.5rem);
+  font-weight: 500;
+  color: var(--link-color);
+  padding: 2rem 0 0 0;
+}
+
+form {
+  width: 80%;
+  height: 90%;
+  gap: 1rem;
   margin: 0 auto;
+}
+
+.entry-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.entry-area2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  position: relative;
+  font-size: clamp(1.1rem, 3vw, 1.2rem);
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid var(--border-dark-color);
+  color: var(--text-color);
+  height: 30px;
+  width: 100%;
+  transition: 0.1s ease;
+}
+
+.label-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--sub-text);
+  transition: 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.label-line2 {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  font-size: clamp(1rem, 3vw, 1rem);
+  color: var(--sub-text);
+  transition: 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+textarea {
+  margin: 2rem 0;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-dark-color);
+  width: 100%;
+  height: 100%;
+}
+
+.entry-area input.has-text + .label-line {
+  color: var(--text-color);
+  transition: all 0.3s;
+  height: 30px;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  transform: translate(0, -40px);
+}
+
+.entry-area2 textarea:focus + .label-line2,
+.entry-area2 textarea:valid + .label-line2 {
+  color: var(--text-color);
+  transition: all 0.3s;
+  height: 30px;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  transform: translate(0px, -30px);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:focus {
+  border-bottom: 2px solid var(--link-color);
+  transition: all 0.3s;
+}
+textarea:focus {
+  border: 2px solid var(--link-color);
+  transition: border 0.3s;
+}
+
+select {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  border: none;
+  background: var(--background-color);
+  border-bottom: 2px solid var(--border-dark-color);
+  color: var(--sub-text);
+  width: 100%;
+  cursor: pointer;
+}
+
+.contact-button {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  padding: 2rem 2rem;
+  background: var(--background-color);
+  border-left: none;
+  border-bottom: none;
+  border: 1px solid var(--border-dark-color);
+  color: var(--text-color);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease, padding 0.3s ease 0.2s;
+  position: relative;
+}
+
+.contact-button:hover {
+  padding: 2rem 2.5rem;
+  letter-spacing: 2px;
+}
+
+.contact-button svg {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  transition: all 0.5s ease;
+}
+
+.contact-button:hover svg {
+  top: 2%;
+  right: 2%;
+  transition: all 0.5s ease;
+}
+
+.send-btn {
+  background: var(--background-color);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  margin-top: 2rem;
+}
+
+.send-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  background: var(--text-color);
+  z-index: -1;
+  transition: all 0.3s;
+  color: var(--background-color);
+}
+
+.send-btn:hover::after {
+  height: 100%;
+}
+
+.send-btn:hover {
+  color: var(--background-color);
+  transition: all 0.3s;
+  border: 1px solid var(--text-color);
+}
+
+.send-btn svg {
+  fill: var(--text-color);
+}
+
+.send-btn:hover svg {
+  fill: var(--background-color);
+}
+
+footer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
   max-width: 2600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  border-top: none;
+  border: 1px solid var(--border-dark-color);
 }
-.contact-container {
+
+.link-text {
+  color: var(--link-color);
+  position: relative;
 }
+.link-text::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: var(--link-color);
+  transition: width 0.3s;
+  position: absolute;
+}
+
+.link-text:hover::after {
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  #contact {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .marquee {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .contact-buttons {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  .contact-form {
+    grid-column: span 1;
+    grid-row: span 4;
+  }
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
