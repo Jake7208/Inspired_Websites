@@ -28,6 +28,7 @@
   white-space: nowrap;
   overflow: hidden;
   border-bottom: 1px solid var(--border-dark-color);
+  color: var(--text-color);
 }
 
 strong {
