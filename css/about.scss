@@ -46,3 +46,24 @@ img {
   margin: 0 auto;
   filter: grayscale(90%);
 }
+
+@media screen and (max-width: 800px) {
+  #about-hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
+    padding: 2rem 0;
+  }
+  .about-content {
+    border-right: none;
+    border-bottom: 1px solid var(--border-dark-color);
+    padding-bottom: 2rem;
+  }
+  .about-content p,
+  .about-content h1 {
+    width: 90%;
+  }
+  .about-image {
+    padding-top: 2rem;
+  }
+}

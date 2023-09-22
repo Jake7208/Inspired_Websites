@@ -316,6 +316,9 @@ footer {
     grid-column: span 1;
     grid-row: span 2;
   }
+  .contact-button:nth-child(2) {
+    border-bottom: 1px solid var(--border-dark-color);
+  }
   .contact-form {
     grid-column: span 1;
     grid-row: span 4;
