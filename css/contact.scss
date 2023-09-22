@@ -33,6 +33,7 @@
 strong {
   font-weight: 400;
   font-size: clamp(5rem, 10vw, 8rem);
+  color: var(--text-color);
 }
 
 .marquee div {
