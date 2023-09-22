@@ -1,0 +1,157 @@
+#services-hero {
+  height: calc(100vh - 80px);
+  margin: 0 auto;
+  max-width: 2600px;
+  max-height: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plans {
+  display: flex;
+  gap: 5rem;
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  padding: 1rem;
+}
+
+#services-hero h1 {
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+}
+
+.plan-cardB {
+  padding: 3rem 1rem;
+  list-style: none;
+  border: 1px solid var(--border-dark-color);
+  height: 95%;
+  max-height: 1300px;
+  width: 40%;
+  margin: auto 0;
+}
+
+.plan-card {
+  padding: 3rem 1rem;
+  list-style: none;
+  border: 1px solid var(--border-dark-color);
+  overflow: hidden;
+  height: 85%;
+  max-height: 800px;
+  width: 35%;
+  margin: auto 0;
+}
+
+.plan-card:nth-child(1) {
+  border-right: none;
+}
+
+.plan-card:nth-last-child(1) {
+  border-left: none;
+}
+
+#more-services {
+  margin: 0 auto;
+  background: var(--text-color);
+  color: var(--background-color);
+  height: auto;
+  max-width: 2600px;
+  padding: 3rem 0;
+}
+
+#more-services h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.services-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  line-height: 200%;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+.service-content h3 {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+}
+
+.service-image {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Reorder every other pair of service items */
+@media screen and (min-width: 1301px) {
+  .services-container {
+    grid-template-areas: "text image" "text image" "text image";
+  }
+}
+@media screen and (max-width: 1300px) {
+  .plans {
+    gap: 2rem;
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .plan-card,
+  .plan-cardB {
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .plan-cardB {
+    border: none;
+  }
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 5rem; /* Adjust gap for smaller screens */
+    width: 90%;
+  }
+  .service-content:nth-child(2),
+  .service-image:nth-child(1) {
+    order: 0;
+  }
+  .service-content:nth-child(1),
+  .service-image:nth-child(2) {
+    order: 2;
+  }
+  .service-contentB {
+    order: 2;
+  }
+  .service-imageB {
+    order: 1;
+  }
+}/*# sourceMappingURL=services.css.map */
