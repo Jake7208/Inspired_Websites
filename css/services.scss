@@ -81,6 +81,7 @@
 .services-container {
   width: 100%;
   max-width: 1440px;
+  width: 90%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -152,10 +153,10 @@
   .service-imageC {
     order: 0;
   }
-  .service-contentB {
-    order: 6;
-  }
   .service-imageB {
-    order: 5;
+    order: -1;
+  }
+  .service-contentB {
+    order: 0;
   }
 }

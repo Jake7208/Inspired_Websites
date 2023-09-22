@@ -170,14 +170,4 @@ gsap.fromTo(
   }
 );
 
-const inputs = document.querySelectorAll(".entry-area input");
 
-inputs.forEach((input) => {
-  input.addEventListener("input", function () {
-    if (this.value.trim() !== "") {
-      this.classList.add("has-text");
-    } else {
-      this.classList.remove("has-text");
-    }
-  });
-});
