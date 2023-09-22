@@ -217,7 +217,7 @@ section {
   height: 100%;
   width: 100;
   border-right: 1px solid var(--border-dark-color);
-  background-image: url("../waterMark.svg");
+  background-image: url("../img/waterMark.svg");
   background-repeat: no-repeat;
   background-size: contain;
   user-select: none;
@@ -320,7 +320,7 @@ section {
   display: flex;
   justify-content: start;
   align-items: center;
-  font-size: clamp(3rem, 10vw, 8rem);
+  font-size: clamp(3rem, 10vw, 6.5rem);
   font-weight: 500;
 }
 
