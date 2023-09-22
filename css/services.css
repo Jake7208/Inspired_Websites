@@ -14,6 +14,7 @@
   gap: 5rem;
   font-size: clamp(0.8rem, 3vw, 1.5rem);
   padding: 1rem;
+  color: var(--link-color);
 }
 
 #services-hero h1 {
@@ -140,18 +141,16 @@
     gap: 5rem; /* Adjust gap for smaller screens */
     width: 90%;
   }
-  .service-content:nth-child(2),
-  .service-image:nth-child(1) {
+  .service-contentC {
+    order: 1;
+  }
+  .service-imageC {
     order: 0;
   }
-  .service-content:nth-child(1),
-  .service-image:nth-child(2) {
-    order: 2;
-  }
   .service-contentB {
-    order: 2;
+    order: 6;
   }
   .service-imageB {
-    order: 1;
+    order: 5;
   }
 }/*# sourceMappingURL=services.css.map */
