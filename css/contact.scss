@@ -198,6 +198,12 @@ select {
   transition: all 0.3s ease, padding 0.3s ease 0.2s;
   position: relative;
 }
+.contact-button:nth-child(2) {
+  border-bottom: none;
+}
+.contact-button:nth-child(1) {
+  border-top: none;
+}
 
 .contact-button:hover {
   padding: 2rem 2.5rem;
