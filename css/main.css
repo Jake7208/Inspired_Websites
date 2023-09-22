@@ -567,6 +567,13 @@ video {
   .testimonial-container {
     grid-template-columns: 1fr;
   }
+  .section-title,
+  .section-titleB {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 @keyframes background-pan {
   from {
